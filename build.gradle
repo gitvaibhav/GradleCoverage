@@ -17,9 +17,39 @@ allprojects {
         maven { url 'https://artifactory.dev.cba/com.google.dl-android-cache' }
     }
 }
+
 // Define versions in a single place
 ext {
     retrofitVersion = '2.1.0'
     okhttpurlconnectionVersion = '3.2.0'
 
 }
+
+group 'org.jacoco'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+check.dependsOn jacocoTestReport
+
+
+
