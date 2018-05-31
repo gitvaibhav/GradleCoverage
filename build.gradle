@@ -28,7 +28,6 @@ check.dependsOn jacocoTestReport
 buildscript {
     repositories {
         mavenLocal()
-        #maven { url 'https://artifactory.dev.cba/dw-sidekickbreakaway-gradle' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
@@ -39,8 +38,6 @@ buildscript {
 allprojects {
     repositories {
         mavenLocal()
-        #maven { url 'https://artifactory.dev.cba/dw-sidekickbreakaway-gradle' }
-        #maven { url 'https://artifactory.dev.cba/com.google.dl-android-cache' }
     }
 }
 // Define versions in a single place
