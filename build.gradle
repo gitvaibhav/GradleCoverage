@@ -1,30 +1,3 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    repositories {
-        mavenLocal()
-        maven { url 'https://artifactory.dev.cba/dw-sidekickbreakaway-gradle' }
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
-        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
-    }
-}
-
-allprojects {
-    repositories {
-        mavenLocal()
-        maven { url 'https://artifactory.dev.cba/dw-sidekickbreakaway-gradle' }
-        maven { url 'https://artifactory.dev.cba/com.google.dl-android-cache' }
-    }
-}
-
-// Define versions in a single place
-ext {
-    retrofitVersion = '2.1.0'
-    okhttpurlconnectionVersion = '3.2.0'
-
-}
-
 group 'org.jacoco'
 version '1.0-SNAPSHOT'
 
@@ -50,6 +23,3 @@ jacocoTestReport {
 }
 
 check.dependsOn jacocoTestReport
-
-
-
